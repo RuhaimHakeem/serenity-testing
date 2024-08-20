@@ -10,7 +10,7 @@ BeforeAll(async () => {
   // Launch the browser once before all the tests
   // Serenity/JS will take care of managing Playwright browser context and browser tabs.
   browser = await playwright.chromium.launch({
-    headless: true,
+    headless: false,
   });
 
   // Configure Serenity/JS
@@ -18,7 +18,7 @@ BeforeAll(async () => {
     actors: Cast.where((actor) =>
       actor.whoCan(
         BrowseTheWebWithPlaywright.using(browser as any, {
-          baseURL: "https://todo-app.serenity-js.org/",
+          baseURL: "http://localhost:3000/",
         })
       )
     ),
@@ -29,6 +29,7 @@ BeforeAll(async () => {
         "@serenity-js/core:ArtifactArchiver",
         { outputDirectory: "target/site/serenity" },
       ],
+
       // ... any other reporting services
     ],
   });
