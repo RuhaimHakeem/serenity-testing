@@ -8,3 +8,4 @@ default:
   require:
     - ./features/**/*.steps.ts # load step definition libraries
     - ./features/**/*.config.ts # load configuration files
+    - ./hooks/hooks.ts

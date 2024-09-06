@@ -11,7 +11,7 @@
     "types": ["node"]
   },
 
-  "include": ["features/**/*.ts", "test/**/*.ts"],
+  "include": ["features/**/*.ts", "test/**/*.ts", "helpers/auth-helper.ts"],
 
   "exclude": ["node_modules"]
 }
