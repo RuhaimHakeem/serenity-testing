@@ -9,7 +9,7 @@ Given(
   { timeout: 60 * 1000 },
   async (actor: Actor) => {
     const userNameSelector = PageElement.located(
-      By.xpath("//*[@id='root']/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]")
+      By.xpath("//div/div/div[contains(text(), 'Julia')]")
     ).describedAs("user name");
 
     await actor.attemptsTo(
@@ -22,7 +22,7 @@ Given(
 Given("the messaging feature is enabled", async () => {
   const actor = actorInTheSpotlight();
   const messageStatusElement = PageElement.located(
-    By.xpath("//*[@id='root']/div[2]/div[2]/form/div[1]/div[1]/div[2]/div/div")
+    By.xpath("//div/div/div[contains(text(), 'Live')]")
   ).describedAs("message status");
 
   await actor.attemptsTo(
@@ -53,7 +53,7 @@ When(
   async (actor: Actor, message: string) => {
     const messageInput = PageElement.located(
       By.xpath(
-        "//*[@id='root']/div[2]/div[2]/div[2]/div[2]/div/div[1]/div[3]/div/div"
+        "//div[@placeholder='Start typing your message']"
       )
     ).describedAs("message input");
 
@@ -67,7 +67,7 @@ When(
 When("{pronoun} clicks the send button", async (actor: Actor) => {
   const sendButton = PageElement.located(
     By.xpath(
-      "//*[@id='root']/div[2]/div[2]/div[2]/div[2]/div/div[1]/div[3]/button"
+      "//div[3]/button/div[contains(text(), 'Send')]"
     )
   ).describedAs("send button");
 
@@ -80,7 +80,7 @@ Then(
     const actor = actorInTheSpotlight();
     const lastMessageElement = PageElement.located(
       By.xpath(
-        '//*[@id="root"]/div[2]/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[1]/div[last()]/span[1]'
+        "//div[last()]/span[1][contains(text(), 'Welcome to Elah the Bay')]"
       )
     ).describedAs("last sent message text");
 

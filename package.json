@@ -1,7 +1,6 @@
 {
   "name": "serenity-testing",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {},
   "author": "Ruhaim",
@@ -20,5 +19,10 @@
     "playwright": "^1.45.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.2"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "description": ""
 }
